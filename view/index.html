@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta content="email=no" name="format-detection" />
+  <meta name="keywords" content="性格测试" />
+  <meta name="description" content="性格测试" />
+	<title>首页</title>
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/index.css">
+  <link rel="stylesheet" type="text/css" href="../css/weui.css">
+  <link rel="stylesheet" type="text/css" href="../css/jquery-weui.css">
+</head>
+    <body>
+        <div class="box">
+          <div class="weui-cells weui-cells_form">
+              <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                <div class="weui-cell__bd">
+                  <input class="weui-input" type="text" placeholder="请输入姓名">
+                </div>
+              </div>
+              <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">性别</label></div>
+                <div class="weui-cell__bd weui-cells_checkbox">
+                  <label class="weui-check__label" for="s11" value="1">
+                    <div class="weui-cell__hd">
+                      <input type="radio" class="weui-check" name="radio" id="s11" checked="checked">
+                      <i class="radio active"></i>
+                      <span>男</span>
+                    </div>
+                  </label>
+                  <label class="weui-check__label beforeNone" for="s11" value="2">
+                    <div class="weui-cell__hd">
+                      <input type="radio" class="weui-check" name="radio" id="s12" checked="">
+                      <i class="radio "></i>
+                      <span>女</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              </div>
+              <div class="weui-cell beforeNone">
+                <div class="weui-cell__hd"><label for="" class="weui-label">出生日期</label></div>
+                <div class="weui-cell__bd">
+                  <input class="weui-input" type="date" value="请选择出生日期" id="date">
+                </div>
+              </div>
+              <a href="javascript:void(0);" class="weui-cell weui-cell_link">
+                  <div class="weui-cell__bd">出生时间</div>
+              </a>
+              <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">时间</label></div>
+                <div class="weui-cell__bd weui-cells_checkbox">
+                  <label class="weui-check__label" for="s11" value="1">
+                    <div class="weui-cell__hd">
+                      <input type="radio" class="weui-check" name="radio" id="s11" checked="checked">
+                      <i class="radio active"></i>
+                      <span>按时间</span>
+                    </div>
+                  </label>
+                  <label class="weui-check__label beforeNone" for="s11" value="2">
+                    <div class="weui-cell__hd">
+                      <input type="radio" class="weui-check" name="radio" id="s12" checked="">
+                      <i class="radio "></i>
+                      <span>按时辰</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <!-- 时间 -->
+              <div class="weui-cell">
+                  <div class="weui-cell__hd"><label for="time-format" class="weui-label">按时间</label></div>
+                  <div class="weui-cell__bd">
+                    <input class="weui-input" id="time-format" type="text" value="" placeholder="请选择时间">
+                  </div>
+              </div>
+              <!-- 时辰 -->
+              <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="date" class="weui-label">按时辰</label></div>
+                <div class="weui-cell__bd">
+                  <input class="weui-input" id="hour" type="text" value="" readonly="" placeholder="请选择时辰">
+                </div>
+              </div>
+              <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="name" class="weui-label">出生地点</label></div>
+                <div class="weui-cell__bd">
+                   <input class="weui-input dizhi" id="start" type="text" value="" readonly="" placeholder="请选择地址">
+                </div>
+              </div>
+            </div>
+            <div class="demos-content-padded">
+                <a href="javascript:;" style="background-color: #1aad19;color:#fff;width: 90%;margin: 40px auto 0;" class="weui-btn weui-btn_primary">提交测试</a>
+            </div>
+        </div>
+        <script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
+        <script type="text/javascript" src="../js/jquery-weui.js"></script>
+        <script type="text/javascript" src="../js/index.js"></script>
+        <script type="text/javascript" src="http://jqweui.com/dist/lib/fastclick.js"></script>
+        <script type="text/javascript" src="../js/city-picker.js" charset="utf-8"></script>
+        <script type="text/javascript">
+          $(function() {
+             FastClick.attach(document.body);
+          });
+           //出发点
+           $("#start").cityPicker({
+                title: "请选择",
+                onChange: function (picker, values, displayValues) {
+                  console.log(values, displayValues);
+                }
+          });
+        </script>
+    </body>
+</html>

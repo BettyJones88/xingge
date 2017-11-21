@@ -1,0 +1,36 @@
+.weui-cell__bd  label{
+    display: inline-block;
+}
+.weui-cells_radio .weui-check:checked + .weui-icon-checked:before {
+    display: block;
+    content: '\EA06'!important;
+    color: #09BB07;
+    font-size: 16px;
+}
+label .weui-cell__hd i.radio{
+	width: 23px;
+	height: 23px;
+	background: url(../images/false.png) no-repeat center;
+	background-size: cover;
+}
+label .weui-cell__hd i.radio.active{
+	background: url(../images/true.png) no-repeat center;
+	background-size: cover;
+}
+label .weui-cell__hd span{
+	position: relative;
+	top:-5px;
+}
+.weui-cell{
+	background: #fff!important;
+}
+.weui-btn_primary {
+    background-color: #1aad19;
+}
+.weui-media-box_appmsg .weui-media-box__hd{
+	width:inherit!important;
+}
+.weui-media-box__hd.right{
+   margin-left: .8em;
+   margin-right: 0!important;
+}
