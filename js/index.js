@@ -1,3 +1,4 @@
+let apiurl = 'https://friend-guess.playonwechat.com/';
 //性别
  $(".weui-cells_checkbox").on("click",".weui-check__label",function(){
       let value = $(this).attr("value");
@@ -55,3 +56,47 @@ console.log($("#date").val());
   ]
 });
 
+   (function(){
+    var _href = decodeURIComponent(window.location.href);
+
+    function GetRequest() {
+      var url = location.search; //获取url中"?"符后的字串
+      var theRequest = new Object();
+      if (url.indexOf("?") != -1) {
+        var str = decodeURIComponent(url.substr(1));
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+          theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+        }
+      }
+      return theRequest;
+    }
+    var Request = new Object();
+    Request = GetRequest();
+     kid = Request['kid'];
+     sign = Request['sign'];
+    // alert(kid);
+    // alert(sign);
+  })();
+
+     $(document).on('click', '.submit', function() {
+        $.ajax({
+            url: apiurl + "birth/history-today?sign=" + sign + '&operator_id=' + kid,
+            data: {
+              gid: gid
+            },
+            header: {
+                'Access-Control-Allow-Origin': '*'
+            },
+            dataType: 'json',
+            type: "get",
+            success(res) {
+                console.log(res);
+                alert('请长按保存图片')
+                wx.previewImage({
+                    current: res, // 当前显示图片的http链接
+                    urls: [res] // 需要预览的图片http链接列表
+                });
+            }
+        })
+    })

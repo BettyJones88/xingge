@@ -22,24 +22,30 @@
         <div class="box">
           <div class="weui-cells weui-cells_form">
               <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                <div class="weui-cell__hd"><label class="weui-label">姓氏</label></div>
                 <div class="weui-cell__bd">
-                  <input class="weui-input" type="text" placeholder="请输入姓名">
+                  <input class="weui-input" type="text" id="txtFname" name="txtFname" placeholder="请输入姓氏">
+                </div>
+              </div>
+              <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">名字</label></div>
+                <div class="weui-cell__bd">
+                  <input class="weui-input" type="text" id="txtLname" name="txtLname" placeholder="请输入名字">
                 </div>
               </div>
               <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">性别</label></div>
                 <div class="weui-cell__bd weui-cells_checkbox">
-                  <label class="weui-check__label" for="s11" value="1">
+                  <label class="weui-check__label" for="s11" value="0">
                     <div class="weui-cell__hd">
-                      <input type="radio" class="weui-check" name="radio" id="s11" checked="checked">
+                      <input type="radio" class="weui-check" name="sex" id="sex0" id="s11" checked="checked">
                       <i class="radio active"></i>
                       <span>男</span>
                     </div>
                   </label>
-                  <label class="weui-check__label beforeNone" for="s11" value="2">
+                  <label class="weui-check__label beforeNone" for="s11" value="1">
                     <div class="weui-cell__hd">
-                      <input type="radio" class="weui-check" name="radio" id="s12" checked="">
+                      <input type="radio" class="weui-check" name="sex" id="sex1" checked="">
                       <i class="radio "></i>
                       <span>女</span>
                     </div>
@@ -47,6 +53,7 @@
                 </div>
               </div>
               </div>
+              <!-- id="yinyangli0"阴阳历 按阳历0  years  months  days-->
               <div class="weui-cell beforeNone">
                 <div class="weui-cell__hd"><label for="" class="weui-label">出生日期</label></div>
                 <div class="weui-cell__bd">
@@ -58,6 +65,7 @@
               </a>
               <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">时间</label></div>
+                <!-- hours  minutes -->
                 <div class="weui-cell__bd weui-cells_checkbox">
                   <label class="weui-check__label" for="s11" value="1">
                     <div class="weui-cell__hd">
@@ -66,6 +74,7 @@
                       <span>按时间</span>
                     </div>
                   </label>
+                  <!-- prov -->
                   <label class="weui-check__label beforeNone" for="s11" value="2">
                     <div class="weui-cell__hd">
                       <input type="radio" class="weui-check" name="radio" id="s12" checked="">
@@ -97,7 +106,7 @@
               </div>
             </div>
             <div class="demos-content-padded">
-                <a href="javascript:;" style="background-color: #1aad19;color:#fff;width: 90%;margin: 40px auto 0;" class="weui-btn weui-btn_primary">提交测试</a>
+                <a href="javascript:;" style="background-color: #1aad19;color:#fff;width: 90%;margin: 40px auto 0;" class="weui-btn weui-btn_primary submit">提交测试</a>
             </div>
         </div>
         <script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
@@ -106,10 +115,7 @@
         <script type="text/javascript" src="http://jqweui.com/dist/lib/fastclick.js"></script>
         <script type="text/javascript" src="../js/city-picker.js" charset="utf-8"></script>
         <script type="text/javascript">
-          $(function() {
-             FastClick.attach(document.body);
-          });
-           //出发点
+          //出发点
            $("#start").cityPicker({
                 title: "请选择",
                 onChange: function (picker, values, displayValues) {
